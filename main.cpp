@@ -14,15 +14,12 @@
 #define FPS 144
 
 
-void imguiMenu(Solver& sol, Render& render, sf::RenderWindow& window, int framesPerSecond, bool& drawVectors, bool& clearScreen, float val[])
+void imguiMenu(Solver& sol, Render& render, sf::RenderWindow& window, int framesPerSecond, bool& drawVectors, bool& clearScreen, float val[], int& particleSize, int& opacity)
 {
 
     //Varieble to change
 
     ImGui::Begin("Flow Menu");
-
-    // if (ImGui::SliderAngle("Angle ", &angle, 0, 360))
-    //     sol.rotateVectors(angle);
 
     std::string fpsTag = "FPS: " + std::to_string(framesPerSecond);
     std::string objectCounter = "Object Counter: " + std::to_string(sol.getObjectCounter());
@@ -37,7 +34,7 @@ void imguiMenu(Solver& sol, Render& render, sf::RenderWindow& window, int frames
             sol.addObject();
 
     
-    if (ImGui::InputInt("Items to add: ", &itemsToAdd))
+    if (ImGui::InputInt("Items to add: ", &itemsToAdd, 1, 0))
         for (int i{0}; i < 500; i++)
             sol.addObject();
 
@@ -63,7 +60,13 @@ void imguiMenu(Solver& sol, Render& render, sf::RenderWindow& window, int frames
     
     if(ImGui::InputFloat("Magnitude ", &val[4], 0, 0, "%.4f", 0))
         sol.setMagnitude(val[4]);
+    
+    if(ImGui::InputInt("Particle Size", &particleSize, 0 , 0))
+        render.setParticleSize(particleSize);
 
+    if(ImGui::InputInt("Opacity", &opacity, 0 , 0))
+        render.changeOpacity(opacity);
+        
     if (ImGui::SmallButton("Reset Vectors"))
         sol.resetVectors();
 
@@ -83,8 +86,10 @@ int main(){
     bool clearScreen = !true;
     float angle = 0;
     float val [5];
+    int particleSize = 1;
+    int opacity = 5;
 
-    float time = 0.f;
+    float totalTileElapsed = 0.f;
 
     int framesPerSecond;
     
@@ -99,7 +104,9 @@ int main(){
 
     Render render(window);
     Solver solver(WIDTH, HEIGHT, window);
+
     solver.intiValues(val);
+    render.getOpactity(opacity);
 
     while(window.isOpen()){
         
@@ -119,25 +126,25 @@ int main(){
                 solver.aimVectors({float(mousePos.x), float(mousePos.y)});
             }
 
-
                 
         }
 
         float dt = deltaClock.getElapsedTime().asSeconds();
-        time += dt;
+        totalTileElapsed += dt;
 
         framesPerSecond = int(1/dt);
 
         ImGui::SFML::Update(window, deltaClock.restart());
 
-        imguiMenu(solver, render, window, framesPerSecond, drawVectors, clearScreen, val);
+        imguiMenu(solver, render, window, framesPerSecond, drawVectors, clearScreen, val, particleSize, opacity);
 
-        if (clearScreen)
+        if (clearScreen || int(floor(totalTileElapsed))%180 == 0){
             window.clear();
+        }
 
         solver.update(dt);
 
-        render.renderScreen(solver, drawVectors, time);
+        render.renderScreen(solver, drawVectors, totalTileElapsed);
 
         ImGui::SFML::Render(window);
 

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <math.h>
 #include <SFML/graphics.hpp>
@@ -10,7 +12,7 @@ struct Render {
 
     sf::RenderTarget& window;
     float color[4] = {0, 0, 0};
-    
+    int opacity = 5;
 
     //Particle Shape
     sf::CircleShape c{1.f};
@@ -20,6 +22,7 @@ struct Render {
     sf::RectangleShape vecShape{vecDimensions};
     sf::Vertex line[2]{};
     sf::Color particleColor {199, 24, 97, 1};
+
     
 
     public:
@@ -79,7 +82,19 @@ struct Render {
         return atan2f(vec.acceleration.y, vec.acceleration.x) * 180/PI;
     }
 
-    static sf::Color getRainbow(float t)
+    void changeOpacity(int& opacity_){
+        opacity = opacity_;
+    }
+
+    void setParticleSize(int& size){
+        c.setRadius(float(size));
+    }
+
+    void getOpactity(int& opacity_){
+        opacity_ = opacity;
+    }
+
+    sf::Color getRainbow(float t)
     {
         const float r = sin(t);
         const float g = sin(t * 2.0f * PI);
@@ -87,7 +102,7 @@ struct Render {
         return {static_cast<uint8_t>(255.0f * r * r),
                 static_cast<uint8_t>(255.0f * g * g),
                 static_cast<uint8_t>(255.0f * b * b),
-                5};
+                static_cast<uint8_t>(opacity)};
     }
 
 };
