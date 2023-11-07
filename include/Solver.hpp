@@ -113,6 +113,8 @@ class Solver {
     // float incX = 0.0010;
     // float incY = 0.07;
     // float incZ = 0.2;
+    // Flow Vector force
+    // float magnintude {1000};
     
     //x, y init value
     float initialX = 2;
@@ -121,9 +123,6 @@ class Solver {
     float incZ = 0.05;
     // Flow Vector force
     float magnintude {550};
-    
-    // Flow Vector force
-    // float magnintude {1000};
 
 
     int vecListLenght;
@@ -158,7 +157,8 @@ class Solver {
     Solver(int width_, int height_, sf::RenderTarget& w_) : WIDTH{width_}, HEIGHT{height_}, window{w_}
     {
         perlin.SetSeed(rand() % 10000);
-        initFlowMatrix();
+        initPerlinFlowField();
+        // initSinFlowField();
         objectCounter = 0;
 
     } 
@@ -172,6 +172,12 @@ class Solver {
             point.update(dt);
             applyConstraints(point);
         }
+
+        // Reseting Vectors change the flow field slightly based on the Z var in perlin noise 
+        resetVectors();
+        // Re-initing Vector field
+        // initSinFlowField();
+        initPerlinFlowField();
 
     }
 
@@ -192,51 +198,47 @@ class Solver {
 
         std::vector<flowVector> tmpV;
 
-
-            // x, y
+            // (x, y)
             if (0 <= x + y * numOfXElements - 1 && x + y * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[x + y * numOfXElements - 1]);
 
-            // x + 1, y
+            // (x + 1, y)
             if (0 <= (x + 1) + y * numOfXElements - 1 && (x + 1) + y * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x + 1) + y * numOfXElements - 1]);
 
-            // x - 1, y
+            // (x - 1, y)
             if (0 <= (x - 1) + y * numOfXElements - 1 && (x - 1) + y * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x - 1) + y * numOfXElements - 1]);
 
-            // x, y + 1
+            // (x, y + 1)
             if (0 <= x + (y + 1) * numOfXElements - 1 && x + (y + 1) * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[x + (y + 1) * numOfXElements - 1]);
 
-            // x, y - 1
+            // (x, y - 1)
             if (0 <= x + (y - 1) * numOfXElements - 1 && x + (y - 1) * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[x + (y - 1) * numOfXElements - 1]);
 
-            // x + 1, y + 1
+            // (x + 1, y + 1)
             if (0 <= (x + 1) + (y + 1)  * numOfXElements - 1 && (x + 1) + (y + 1)  * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x + 1) + (y + 1)  * numOfXElements - 1]);
 
-            // x - 1, y - 1
+            // (x - 1, y - 1)
             if (0 <= (x - 1) + (y - 1)  * numOfXElements - 1 && (x - 1) + (y - 1)  * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x - 1) + (y - 1)  * numOfXElements - 1]);
 
-            // x - 1, y + 1
+            // (x - 1, y + 1)
             if (0 <= (x - 1) + (y + 1)  * numOfXElements - 1 && (x - 1) + (y + 1)  * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x - 1) + (y + 1)  * numOfXElements - 1]);
 
-            // x + 1, y - 1
+            // (x + 1, y - 1)
             if (0 <= (x + 1) + (y - 1)  * numOfXElements - 1 && (x + 1) + (y - 1)  * numOfXElements - 1 < vecListLenght)
                 tmpV.push_back(flowVecs[(x + 1) + (y - 1)  * numOfXElements - 1]);
 
-
-
-        
-
         return tmpV;
+
     }
 
-    void initFlowMatrix(){
+    void initPerlinFlowField(){
         
         double x = initialX;
         double y = x;
@@ -244,12 +246,24 @@ class Solver {
         for(int i = 0; i * spacing < HEIGHT + spacing; i++){
             for(int j = 0; j * spacing < WIDTH; j++){
                 flowVector f({j * spacing, i * spacing}, {magnintude, 0.f} , flowVecRadius);
-                // f.rotate(perlin.GetValue(y * i/600, y + x * j/400, z) * 2 * PI);
                 f.rotate(perlin.GetPerlin(j * (4 + x), i * (4 + y), z) * 2 * PI);
                 flowVecs.push_back(f);
                 x += incX;
             }
             y += incY; 
+        }
+        z += incZ;
+        vecListLenght = flowVecs.size();
+    }
+
+    void initSinFlowField(){
+        
+        for(int i = 0; i * spacing < HEIGHT + spacing; i++){
+            for(int j = 0; j * spacing < WIDTH; j++){
+                flowVector f({j * spacing, i * spacing}, {magnintude, 0.f} , flowVecRadius);
+                f.rotate((sin(j) + cos(i)) * z);
+                flowVecs.push_back(f);
+            }
         }
         z += incZ;
         vecListLenght = flowVecs.size();
@@ -279,7 +293,6 @@ class Solver {
         return sqrtf(powf(pos2.x - pos1.x, 2) + powf(pos2.y - pos1.y, 2));
     }
 
-
     void aimVectors(sf::Vector2f pos){
         for(flowVector& vec: flowVecs){
             vec.acceleration = pos - vec.position;
@@ -294,13 +307,11 @@ class Solver {
         }
     }
 
-
     void resetVectors(){
         for(flowVector& vec: flowVecs){
             vec.~flowVector();
         }
         flowVecs.clear();
-        initFlowMatrix();
     }
 
     void clearObjects(){
@@ -337,25 +348,28 @@ class Solver {
         
     }
     
-
     void applyConstraints(circleObj& point){
 
         if(point.pos.x - circleRadius > WIDTH){
             point.pos.x -= WIDTH;
             point.prevPos.x -= WIDTH;
         }
+        
         if(point.pos.x - circleRadius < 0){
             point.pos.x += WIDTH;
             point.prevPos.x += WIDTH;
         }
+        
         if(point.pos.y - circleRadius > HEIGHT){
             point.pos.y -= HEIGHT;
             point.prevPos.y -= HEIGHT;
         }
+        
         if(point.pos.y - circleRadius < 0){
             point.pos.y += HEIGHT;
             point.prevPos.y += HEIGHT;
         }
+        
 
     }
 
@@ -366,7 +380,6 @@ class Solver {
         vals[3] = incZ;
         vals[4] = magnintude;
     }
-
 
 };
 

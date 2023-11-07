@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1
+# Install script for directory: C:/Users/thedarkchoco/Desktop/vs_code/New folder/Flow-Fields
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/thedarkchoco/Desktop/vs_code/New folder/Flow-Fields/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,8 @@
 {
   "cmake.configureArgs": [
-    "-DCMAKE_TOOLCHAIN_FILE=C:/Users/thedarkdarkchocolate/vcpkg/scripts/buildsystems/vcpkg.cmake"
-    
+    "-DCMAKE_TOOLCHAIN_FILE=C:/Users/thedarkchoco/vcpkg/scripts/buildsystems/vcpkg.cmake" 
   ],
+  "cmake.cmakePath": "C:/CMake/bin/cmake.exe",
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -109,5 +109,6 @@
     "streambuf": "cpp",
     "typeinfo": "cpp",
     "sstream": "cpp"
-  }
+  },
+  "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\g++.exe"
 }
