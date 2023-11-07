@@ -1,4 +1,0 @@
-C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/testSim_imgui.dir
-C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/PACKAGE.dir
-C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/ZERO_CHECK.dir
