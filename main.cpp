@@ -73,8 +73,6 @@ void imguiMenu(Solver& sol, Render& render, sf::RenderWindow& window, int frames
     if (ImGui::SmallButton("Toggle clear screen"))
         clearScreen = !clearScreen;
 
-    sol.resetVectors();
-
     ImGui::End();
 
 }

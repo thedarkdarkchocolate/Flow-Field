@@ -26,7 +26,7 @@ events:
       Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
       Copyright (C) Microsoft Corporation. All rights reserved.
       
-      Build started 11/3/2023 3:09:55 AM.
+      Build started 11/7/2023 4:49:26 PM.
       Project "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\3.28.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
@@ -61,7 +61,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:02.35
+      Time Elapsed 00:00:02.49
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -80,8 +80,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8"
-      binary: "C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8"
+      source: "C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg"
+      binary: "C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -93,32 +93,32 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8'
+        Change Dir: 'C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_4e2cf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_dac07.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 11/3/2023 3:09:58 AM.
-        Project "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ojj5c8\\cmTC_4e2cf.vcxproj" on node 1 (default targets).
+        Build started 11/7/2023 4:49:30 PM.
+        Project "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3lqysg\\cmTC_dac07.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_4e2cf.dir\\Debug\\".
-          Creating directory "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ojj5c8\\Debug\\".
-          Creating directory "cmTC_4e2cf.dir\\Debug\\cmTC_4e2cf.tlog\\".
+          Creating directory "cmTC_dac07.dir\\Debug\\".
+          Creating directory "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3lqysg\\Debug\\".
+          Creating directory "cmTC_dac07.dir\\Debug\\cmTC_dac07.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_4e2cf.dir\\Debug\\cmTC_4e2cf.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_dac07.dir\\Debug\\cmTC_dac07.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4e2cf.dir\\Debug\\\\" /Fd"cmTC_4e2cf.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dac07.dir\\Debug\\\\" /Fd"cmTC_dac07.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30151 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CMakeCXXCompilerABI.cpp
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4e2cf.dir\\Debug\\\\" /Fd"cmTC_4e2cf.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dac07.dir\\Debug\\\\" /Fd"cmTC_dac07.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ojj5c8\\Debug\\cmTC_4e2cf.exe" /INCREMENTAL /ILK:"cmTC_4e2cf.dir\\Debug\\cmTC_4e2cf.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8/Debug/cmTC_4e2cf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8/Debug/cmTC_4e2cf.lib" /MACHINE:X64  /machine:x64 cmTC_4e2cf.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_4e2cf.vcxproj -> C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ojj5c8\\Debug\\cmTC_4e2cf.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3lqysg\\Debug\\cmTC_dac07.exe" /INCREMENTAL /ILK:"cmTC_dac07.dir\\Debug\\cmTC_dac07.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg/Debug/cmTC_dac07.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg/Debug/cmTC_dac07.lib" /MACHINE:X64  /machine:x64 cmTC_dac07.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_dac07.vcxproj -> C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3lqysg\\Debug\\cmTC_dac07.exe
         PostBuildEvent:
           setlocal
-          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/thedarkdarkchocolate/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-ojj5c8/Debug/cmTC_4e2cf.exe -installedDir C:/Users/thedarkdarkchocolate/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/thedarkdarkchocolate/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/thedarkdarkchocolate/Desktop/vscode/imgui/Sim_1/build/CMakeFiles/CMakeScratch/TryCompile-3lqysg/Debug/cmTC_dac07.exe -installedDir C:/Users/thedarkdarkchocolate/vcpkg/installed/x64-windows/debug/bin -OutVariable out
           if %errorlevel% neq 0 goto :cmEnd
           :cmEnd
           endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -128,15 +128,15 @@ events:
           if %errorlevel% neq 0 goto :VCEnd
           :VCEnd
         FinalizeBuildStatus:
-          Deleting file "cmTC_4e2cf.dir\\Debug\\cmTC_4e2cf.tlog\\unsuccessfulbuild".
-          Touching "cmTC_4e2cf.dir\\Debug\\cmTC_4e2cf.tlog\\cmTC_4e2cf.lastbuildstate".
-        Done Building Project "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ojj5c8\\cmTC_4e2cf.vcxproj" (default targets).
+          Deleting file "cmTC_dac07.dir\\Debug\\cmTC_dac07.tlog\\unsuccessfulbuild".
+          Touching "cmTC_dac07.dir\\Debug\\cmTC_dac07.tlog\\cmTC_dac07.lastbuildstate".
+        Done Building Project "C:\\Users\\thedarkdarkchocolate\\Desktop\\vscode\\imgui\\Sim_1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3lqysg\\cmTC_dac07.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:01.56
+        Time Elapsed 00:00:01.68
         
       exitCode: 0
 ...
