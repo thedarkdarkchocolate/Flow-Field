@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/Users/thedarkdarkchocolate/vcpkg/packages/imgui-sfml_x64-windows/include/**",
+        "C:/Users/thedarkdarkchocolate/vcpkg/packages/sfml_x64-windows/include/**",
+        "C:/Users/thedarkdarkchocolate/vcpkg/packages/imgui_x64-windows/include/**",
+        "C:/Users/thedarkdarkchocolate/vcpkg/packages/libnoise_x64-windows/include/**"
+      ],
+      "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "c++23",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
