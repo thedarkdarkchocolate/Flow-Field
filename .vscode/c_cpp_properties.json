@@ -7,7 +7,8 @@
           "C:/Users/thedarkdarkchocolate/vcpkg/packages/imgui-sfml_x64-windows/include/**",
           "C:/Users/thedarkdarkchocolate/vcpkg/packages/sfml_x64-windows/include/**",
           "C:/Users/thedarkdarkchocolate/vcpkg/packages/imgui_x64-windows/include/**",
-          "C:/Users/thedarkdarkchocolate/vcpkg/packages/libnoise_x64-windows/include/**"
+          "C:/Users/thedarkdarkchocolate/vcpkg/packages/libnoise_x64-windows/include/**",
+          "qwdqw"
         ],
         "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
         "cStandard": "${default}",
